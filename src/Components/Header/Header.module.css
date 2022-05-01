@@ -1,0 +1,15 @@
+.Header {
+    height: 72px;
+    grid-area: "H";
+    background: #0064EB;
+    display: flex;
+    flex-direction: row;
+}
+
+.Logo {
+    margin-left: 41px;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: #fff;
+}

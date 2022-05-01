@@ -1,0 +1,27 @@
+.InputContainer {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.Input {
+    height: 40px;
+    width: 500px;
+    margin: 0;
+    border: 0;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+}
+
+.Input::placeholder {
+    color: grey;
+}
+
+.Button {
+    margin-left: 22px;
+    border: 0;
+    background-color: #fff;
+    height: 42px;
+    border-radius: 6px 0 0 6px;
+}

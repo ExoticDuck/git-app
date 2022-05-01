@@ -1,0 +1,6 @@
+.PersonInfoBlock{
+    border: 1px solid red;
+    grid-area: "P";
+    height: 100%;
+    width: 100%;
+}
