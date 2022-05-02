@@ -1,13 +1,14 @@
 import axios from "axios";
 
-// const instance = axios.create({
-//     baseURL: "https://api.github.com",
-//     withCredentials: true
-// })
+const instance = axios.create({
+    baseURL: "https://api.github.com",
+    headers: {
+        withCredentials: true,
+    }
+})
 
 export const UserAPI = {
     getUser(username: string) {
-        debugger
-        return axios.get(`https://api.github.com/users/` + username);
+        return instance.get(`https://api.github.com/users/ExoticDuck`);
     }
 }
