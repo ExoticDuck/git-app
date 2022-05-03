@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, KeyboardEventHandler, useState } from "react";
 import style from "./Input.module.css";
 
 type InputPropsType = {
@@ -16,6 +16,17 @@ let Input: React.FC<InputPropsType> = (props) => {
         }
         setValue(e.currentTarget.value);
     }
+
+    function onKeyPressHandler(event: KeyboardEvent<HTMLInputElement>) {  
+        if(event.charCode === 13) {
+            if(value.trim() !== "") {
+                props.onSubmit(value);
+                setValue("");
+            } else {
+                setPlaceholder("Enter something!")
+            }
+        }
+    }
     
     function onClickHandler() {
         if(value.trim() !== "") {
@@ -29,6 +40,7 @@ let Input: React.FC<InputPropsType> = (props) => {
     return(
         <div className={style.InputContainer}>
             <button className={style.Button} onClick={onClickHandler}><i className="fa-solid fa-magnifying-glass"></i></button><input
+            onKeyPress={onKeyPressHandler}
             onChange={onChangeHandler}
             value={value} 
             className={style.Input} 

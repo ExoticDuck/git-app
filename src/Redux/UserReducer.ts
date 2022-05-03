@@ -1,5 +1,6 @@
 import { Dispatch } from "redux";
 import { UserAPI } from "../API/api";
+import { setUserFound } from "./AppReducer";
 
 export type UserType = {
     login: string,
@@ -96,7 +97,28 @@ let UploadUser = (user: UserType) => {
 
 export const getUser = (username: string) => {
     return async (dispatch: Dispatch) => {
-    let result = await UserAPI.getUser(username);
-    dispatch(UploadUser(result.data));
+    let result = await UserAPI.getUser(username)
+    .then((result) => {
+        dispatch(setUserFound(true));
+        dispatch(UploadUser(result.data));
+    }).catch((error) => {
+        if(error.response.status === 404) {
+            dispatch(setUserFound(false));
+        }
+    })
+        
+    
+    
+    // .catch((error) => {
+    //     if(error.responce.status === 404) {
+    //         dispatch(setUserFound(false));
+    //     }
+    // })
+    // if(result.status === 404) {
+    //     debugger
+    //     dispatch(setUserFound(false));
+    // } else {
+        
+    
 }}
 
