@@ -96,8 +96,7 @@ let UploadUser = (user: UserType) => {
 
 export const getUser = (username: string) => {
     return async (dispatch: Dispatch) => {
-    debugger
-    const result = await UserAPI.getUser(username);
+    let result = await UserAPI.getUser(username);
     dispatch(UploadUser(result.data));
-}
-}
+}}
+

@@ -8,17 +8,22 @@ type InputPropsType = {
 
 let Input: React.FC<InputPropsType> = (props) => {
     let [value, setValue] = useState(props.value);
+    let [placeholder, setPlaceholder] = useState("Enter GitHub username")
 
     function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
+        if(placeholder !== "Enter GitHub username") {
+            setPlaceholder("Enter GitHub username");
+        }
         setValue(e.currentTarget.value);
     }
     
     function onClickHandler() {
-        debugger
-        
+        if(value.trim() !== "") {
             props.onSubmit(value);
-            // setValue("");
-        
+            setValue("");
+        } else {
+            setPlaceholder("Enter something!")
+        }
     }
 
     return(
@@ -27,7 +32,7 @@ let Input: React.FC<InputPropsType> = (props) => {
             onChange={onChangeHandler}
             value={value} 
             className={style.Input} 
-            placeholder={"Enter GitHub username"}></input>
+            placeholder={placeholder}></input>
         </div>
     );
 }

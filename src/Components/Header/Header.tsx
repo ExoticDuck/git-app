@@ -15,7 +15,7 @@ let Header: React.FC<HeaderPropsType> = (props) => {
             <div className={style.Logo}>
                 <i className="fa-brands fa-github"></i>
             </div>
-            <Input value="" onSubmit={getUser}/>
+            <Input value="" onSubmit={props.getUser}/>
         </div>
     );
 }

@@ -1,6 +1,76 @@
-.PersonInfoBlock{
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.PersonInfoBlock {
     border: 1px solid red;
     grid-area: "P";
     height: 100%;
     width: 100%;
+}
+
+.AvatarBlock {
+    width: 100%;
+    height: 300px;
+}
+
+.Avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin-top: 39px;
+    margin-left: 57px;
+}
+
+.PersonInfo {
+    height: fit-content;
+    width: 100%;
+}
+
+.Name {
+    width: fit-content;
+    height: 34px;
+    margin-top: 29px;
+    margin-left: 57px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 34px;
+}
+
+.Username {
+    width: fit-content;
+    height: 29px;
+    margin-top: 12px;
+    margin-left: 57px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0064eb;
+}
+
+.FollowBar {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 25px;
+    margin-left: 57px;
+}
+
+.Followers {
+    display: inline-block;
+}
+.Followers i {
+    color: gray;
+    margin-right: 8px;
+}
+
+.Following {
+    margin-left: 20px;
+    display: inline-block;
+}
+.Following i {
+    margin-right: 12px;
+    color: grey;
 }

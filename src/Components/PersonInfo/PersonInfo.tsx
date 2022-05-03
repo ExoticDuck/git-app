@@ -8,20 +8,30 @@ type PersonInfoPropsType = {
     avatarUrl: string,
     htmlUrl: string,
     name: string | null,
-    username: string, 
+    username: string,
     followers: number,
     following: number
 }
 
 let PersonInfo: React.FC<PersonInfoPropsType> = (props) => {
-    return(
+    return (
         <div className={style.PersonInfoBlock}>
-            <div>
-                <img src={props.avatarUrl} alt="avatar"/>
+            <div className={style.AvatarBlock}>
+                <img src={props.avatarUrl} alt="avatar" className={style.Avatar} />
             </div>
-            <div>
-                {props.name}
-                {props.username}
+            <div className={style.PersonInfo}>
+                <div className={style.Name}>{props.name}</div>
+                <div className={style.Username}>{props.username}</div>
+            </div>
+            <div className={style.FollowBar}>
+                <div className={style.Followers}>
+                    <i className="fa-solid fa-user-group"></i>
+                    {props.followers} followers
+                </div>
+                <div className={style.Following}>
+                    <i className="fa-solid fa-user"></i>
+                    {props.following} following
+                </div>
             </div>
         </div>
     );
@@ -30,7 +40,7 @@ type mapStateToPropsType = {
     avatarUrl: string,
     htmlUrl: string,
     name: string | null,
-    username: string, 
+    username: string,
     followers: number,
     following: number
 }
