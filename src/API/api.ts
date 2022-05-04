@@ -12,8 +12,9 @@ export const UserAPI = {
         return instance.get(`https://api.github.com/users/${username}`);
     }
 }
-// export const UserAPI = {
-//     getUser(username: string) {
-//         return axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`);
-//     }
-// }
+
+export const RepositoriesAPI = {
+    getRepositories(username: string) {
+        return instance.get(`https://api.github.com/users/${username}/repos`);
+    }
+}

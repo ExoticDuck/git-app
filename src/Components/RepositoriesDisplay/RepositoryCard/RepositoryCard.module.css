@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.RepositoryCard {
+    box-sizing: border-box;
+    width: 877px;
+    height: 112px;
+    border-radius: 6px;
+    padding: 24px 32px 24px 32px;
+    background-color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+}
+
+.Name {
+    width: fit-content;
+    height: 29px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0064eb;
+}
+.Name  a {
+    text-decoration: none;
+    color: #0064eb;
+}
+
+.Description {
+    width: fit-content;
+    height: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}

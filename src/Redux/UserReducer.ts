@@ -106,19 +106,5 @@ export const getUser = (username: string) => {
             dispatch(setUserFound(false));
         }
     })
-        
-    
-    
-    // .catch((error) => {
-    //     if(error.responce.status === 404) {
-    //         dispatch(setUserFound(false));
-    //     }
-    // })
-    // if(result.status === 404) {
-    //     debugger
-    //     dispatch(setUserFound(false));
-    // } else {
-        
-    
 }}
 

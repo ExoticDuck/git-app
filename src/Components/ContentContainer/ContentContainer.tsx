@@ -23,13 +23,6 @@ let ContentContainer: React.FC<ContentContainerPropsType> = (props) => {
     return(
         <Banner startCondition={props.startCondition} isUserFound={props.isUserFound}/>
     );
-        
-    // return(
-    //     <div className={style.ContentContainer}>
-    //         <PersonInfo/>
-    //         <RepositoriesDisplay/>
-    //     </div>
-    // );
 }
 
 type MapDispatchToPropsType = {

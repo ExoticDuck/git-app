@@ -21,7 +21,7 @@ let PersonInfo: React.FC<PersonInfoPropsType> = (props) => {
             </div>
             <div className={style.PersonInfo}>
                 <div className={style.Name}>{props.name}</div>
-                <div className={style.Username}>{props.username}</div>
+                <div className={style.Username}><a href={props.htmlUrl} target="_blank" rel="noreferrer">{props.username}</a></div>
             </div>
             <div className={style.FollowBar}>
                 <div className={style.Followers}>
@@ -36,6 +36,7 @@ let PersonInfo: React.FC<PersonInfoPropsType> = (props) => {
         </div>
     );
 }
+
 type mapStateToPropsType = {
     avatarUrl: string,
     htmlUrl: string,

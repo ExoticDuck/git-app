@@ -45,7 +45,11 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    color: #0064eb;
+}
+
+.Username a {
+    text-decoration: none;
+    color: #0064EB;
 }
 
 .FollowBar {
