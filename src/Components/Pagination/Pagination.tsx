@@ -2,7 +2,7 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 import style from "./Pagination.module.css";
 
-type Selected = {
+export type Selected = {
     selected: number
 }
 
@@ -22,16 +22,16 @@ const Pagination: React.FC<PagiantionPropsType> = (props) => {
             pageCount={props.pageCount}
             pageRangeDisplayed={props.pageRangeDisplayed}
             onPageChange={props.onChange}
-            containerClassName="Pagination"
-            activeClassName="PaginationActive"
-            pageLinkClassName="PaginationPageLink"
-            breakLinkClassName="PaginationBreakLink"
-            nextLinkClassName="PaginationNextLink"
-            previousLinkClassName="PaginationPreviousLink"
-            pageClassName="PaginationPageItem"
-            breakClassName="PaginationBreak"
-            nextClassName="PaginationNextItem"
-            previousClassName="PaginationPrevious Item"
+            containerClassName={style.Pagination}
+            activeClassName={style.PaginationActive}
+            pageLinkClassName={style.PaginationPageLink}
+            breakLinkClassName={style.PaginationBreakLink}
+            nextLinkClassName={style.PaginationNextLink}
+            previousLinkClassName={style.PaginationPreviousLink}
+            pageClassName={style.PaginationPageItem}
+            breakClassName={style.PaginationBreak}
+            nextClassName={style.PaginationNextItem}
+            previousClassName={style.PaginationPreviousItem}
             previousLabel={
                 <>
                     <i className="fa-solid fa-chevron-left"></i>

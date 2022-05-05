@@ -14,7 +14,10 @@ export const UserAPI = {
 }
 
 export const RepositoriesAPI = {
-    getRepositories(username: string) {
+    getRepositories(username: string, currentPage: number = 1) {
+        return instance.get(`https://api.github.com/users/${username}/repos?per_page=4&page=${currentPage}`);
+    },
+    getRepositoriesCount(username: string) {
         return instance.get(`https://api.github.com/users/${username}/repos`);
     }
 }

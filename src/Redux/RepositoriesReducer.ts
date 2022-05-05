@@ -2,8 +2,12 @@ import { Dispatch } from "redux";
 import { RepositoriesAPI } from "../API/api";
 
 const UPDATE_REPOS_LIST = "UPDATE-REPOS-LIST";
+const UPDATE_REPOS_COUNT = "UPDATE-REPOS-COUNT";
 
-type RepositoriesStateType = RepositoryType[];
+type RepositoriesStateType = {
+    repositoriesCount: number,
+    repositoriesList: RepositoryType[]
+};
 export type RepositoryType = {
         id: number,
         node_id: string,
@@ -109,16 +113,24 @@ export type RepositoryType = {
         default_branch: string
 }
 
-export const RepositoriesReducer = (state: RepositoriesStateType = [], action: GeneralACType) => {
+let initialState:RepositoriesStateType = {
+    repositoriesCount: 0,
+    repositoriesList: []
+}
+
+export const RepositoriesReducer = (state: RepositoriesStateType = initialState, action: GeneralACType) => {
     switch (action.type) {
         case UPDATE_REPOS_LIST: {
-            return [...action.payload.list]
+            return {...state, repositoriesList: [...action.payload.list]}
+        }
+        case UPDATE_REPOS_COUNT: {
+            return {...state, repositoriesCount: action.payload.count}
         }
         default:
             return state;
     }
 }
-type GeneralACType = UpdateReposListACType;
+type GeneralACType = UpdateReposListACType | UpdateReposCountACType;
 type UpdateReposListACType = ReturnType<typeof updateReposList>
 export const updateReposList = (list: RepositoryType[]) => {
     return {
@@ -128,10 +140,21 @@ export const updateReposList = (list: RepositoryType[]) => {
         }
     } as const
 }
+type UpdateReposCountACType = ReturnType<typeof updateReposCount>
+export const updateReposCount = (count: number) => {
+    return {
+        type: UPDATE_REPOS_COUNT,
+        payload: {
+            count
+        }
+    } as const
+}
 
-export const getRepositories = (username: string) => {
+export const getRepositories = (username: string, currentPage: number) => {
     return async (dispatch: Dispatch) => {
-        let result = await RepositoriesAPI.getRepositories(username);
+        let result = await RepositoriesAPI.getRepositories(username, currentPage);
+        let countResult = await RepositoriesAPI.getRepositoriesCount(username);
+        dispatch(updateReposCount(countResult.data.length))
         dispatch(updateReposList(result.data));
     }
 }

@@ -8,7 +8,7 @@ import { getRepositories } from './../../Redux/RepositoriesReducer';
 
 type HeaderPropsType = {
     getUser: (username: string) => void
-    getRepositories: (username: string) => void
+    getRepositories: (username: string, currentPage: number) => void
 }
 
 let Header: React.FC<HeaderPropsType> = (props) => {
@@ -16,7 +16,7 @@ let Header: React.FC<HeaderPropsType> = (props) => {
     function onSubmitHandler(username: string) {
         debugger
         props.getUser(username);
-        props.getRepositories(username);
+        props.getRepositories(username, 1);
     }
 
     return(
