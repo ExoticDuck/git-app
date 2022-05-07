@@ -1,4 +1,10 @@
 .App {
   /* overflow: hidden; */
   height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 72px calc(100vh - 72px);
+  grid-template-areas: "H"
+  "C";
+  /* border: 3px solid purple; */
 }

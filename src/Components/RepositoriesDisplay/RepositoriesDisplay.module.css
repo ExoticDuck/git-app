@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .RepositoriesDisplayBlock {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    position: relative;
     height: 100%;
     width: 100%;
     grid-area: "R";
@@ -18,4 +19,45 @@
     font-size: 32px;
     line-height: 42px;
     color: #000000;
+}
+
+.Repositories {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.BannerDisplayBlock {
+    height: 100%;
+    width: 100%;
+    grid-area: "R";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.Banner {
+    height: 100px;
+    width: fit-content;
+    color: #808080;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 31px;
+    text-align: center;
+}
+
+.Icon {
+    width: 76px;
+    height: 62px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    border: 10px solid #808080;
+    border-radius: 8px;
+    margin-bottom: 48px;
 }

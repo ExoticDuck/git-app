@@ -14,20 +14,35 @@ type RepositoriesDisplayPropsType = {
 }
 
 let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = (props) => {
-    let mappedRepos = props.repositories.map(repo => <RepositoryCard name={repo.name} description={repo.description} html_Url={repo.html_url}/>);
+    let mappedRepos = props.repositories.map(repo => <RepositoryCard name={repo.name} description={repo.description} html_Url={repo.html_url} />);
     let pagesCount = Math.ceil(props.repositoriesCount / 4);
 
-    function onPageChangeHandler({selected}: Selected) {
+    function onPageChangeHandler({ selected }: Selected) {
         props.getRepositories(props.username, selected + 1);
     }
 
-    return(
+    if (!props.repositories.length) {
+        return (
+            <div className={style.BannerDisplayBlock}>
+                <div className={style.Banner}>
+                    <div className={style.Icon}>
+                        <i className="fa-solid fa-xmark"></i>
+                    </div>
+                    Repository list is empty
+                </div>
+            </div>
+        );
+    }
+
+    return (
         <div className={style.RepositoriesDisplayBlock}>
             <div className={style.RepositoriesHeader}>
                 {`Repositories (${props.repositoriesCount})`}
             </div>
-            {mappedRepos}
-            <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1}/>
+            <div className={style.Repositories}>
+                {mappedRepos}
+            </div>
+            <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
         </div>
     );
 }
@@ -40,4 +55,4 @@ let mapDispatchToProps = (state: AppStateType) => {
     }
 }
 
-export default connect(mapDispatchToProps, {getRepositories})(RepositoriesDisplay);
+export default connect(mapDispatchToProps, { getRepositories })(RepositoriesDisplay);

@@ -1,7 +1,9 @@
 .ContentContainer {
+    grid-area: "C";
     height: 100%;
     display: grid;
     grid-template-columns: 3fr 6fr;
-    grid-template-rows: auto;
-    grid-template-areas: "P" "R";
+    grid-template-rows: 100%;
+    grid-template-areas: "P R";
+    /* border: 1px solid blue; */
 }
