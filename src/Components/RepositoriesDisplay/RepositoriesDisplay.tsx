@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./RepositoriesDisplay.module.css"
 import { connect } from 'react-redux';
 import { AppStateType } from "../../Redux/store";
@@ -10,16 +10,19 @@ type RepositoriesDisplayPropsType = {
     repositories: RepositoryType[]
     username: string
     repositoriesCount: number
+    isFetching: boolean
     getRepositories: (username: string, currentPage: number) => void
 }
 
-let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = (props) => {
+let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((props) => {
     let mappedRepos = props.repositories.map(repo => <RepositoryCard name={repo.name} description={repo.description} html_Url={repo.html_url} />);
     let pagesCount = Math.ceil(props.repositoriesCount / 4);
 
     function onPageChangeHandler({ selected }: Selected) {
-        props.getRepositories(props.username, selected + 1);
+        props.getRepositories(props.username, ++selected);
     }
+
+   
 
     if (!props.repositories.length) {
         return (
@@ -30,6 +33,13 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = (props) => {
                     </div>
                     Repository list is empty
                 </div>
+            </div>
+        );
+    }
+    if(props.isFetching) {
+        return(
+            <div className={style.BannerDisplayBlock}>
+                Loading 
             </div>
         );
     }
@@ -45,13 +55,16 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = (props) => {
             <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
         </div>
     );
-}
+
+    
+});
 
 let mapDispatchToProps = (state: AppStateType) => {
     return {
         repositories: state.repositories.repositoriesList,
         repositoriesCount: state.repositories.repositoriesCount,
-        username: state.user.login
+        username: state.user.login,
+        isFetching: state.appCondition.isReposFetching
     }
 }
 

@@ -3,11 +3,14 @@ import { RepositoriesAPI } from "../API/api";
 
 const UPDATE_REPOS_LIST = "UPDATE-REPOS-LIST";
 const UPDATE_REPOS_COUNT = "UPDATE-REPOS-COUNT";
+const UPDATE_IS_FETCHING = "UPDATE-IS-FETCHING";
 
 type RepositoriesStateType = {
     repositoriesCount: number,
+    //isFetching: boolean,
     repositoriesList: RepositoryType[]
 };
+
 export type RepositoryType = {
         id: number,
         node_id: string,
@@ -115,10 +118,11 @@ export type RepositoryType = {
 
 let initialState:RepositoriesStateType = {
     repositoriesCount: 0,
+    //isFetching: false, 
     repositoriesList: []
 }
 
-export const RepositoriesReducer = (state: RepositoriesStateType = initialState, action: GeneralACType) => {
+export const RepositoriesReducer = (state: RepositoriesStateType = initialState, action: GeneralACType): RepositoriesStateType => {
     switch (action.type) {
         case UPDATE_REPOS_LIST: {
             return {...state, repositoriesList: [...action.payload.list]}
@@ -126,11 +130,14 @@ export const RepositoriesReducer = (state: RepositoriesStateType = initialState,
         case UPDATE_REPOS_COUNT: {
             return {...state, repositoriesCount: action.payload.count}
         }
+        // case UPDATE_IS_FETCHING: {
+        //     return {...state, isFetching: action.payload.isFetching}
+        // }
         default:
             return state;
     }
 }
-type GeneralACType = UpdateReposListACType | UpdateReposCountACType;
+type GeneralACType = UpdateReposListACType | UpdateReposCountACType | UpdateIsFetchingACType;
 type UpdateReposListACType = ReturnType<typeof updateReposList>
 export const updateReposList = (list: RepositoryType[]) => {
     return {
@@ -149,12 +156,24 @@ export const updateReposCount = (count: number) => {
         }
     } as const
 }
+type UpdateIsFetchingACType = ReturnType<typeof updateIsFetching>
+export const updateIsFetching = (isFetching: boolean) => {
+    return {
+        type: UPDATE_IS_FETCHING,
+        payload: {
+            isFetching
+        }
+    } as const
+}
 
 export const getRepositories = (username: string, currentPage: number) => {
     return async (dispatch: Dispatch) => {
+        
         let result = await RepositoriesAPI.getRepositories(username, currentPage);
+    
         let countResult = await RepositoriesAPI.getRepositoriesCount(username);
-        dispatch(updateReposCount(countResult.data.length))
+        dispatch(updateReposCount(countResult.data.length));
         dispatch(updateReposList(result.data));
+        
     }
 }
