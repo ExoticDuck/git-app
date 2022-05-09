@@ -14,7 +14,7 @@ type PagiantionPropsType = {
     onChange: (value: Selected) => void
 }
 
-const Pagination: React.FC<PagiantionPropsType> = (props) => {
+const Pagination: React.FC<PagiantionPropsType> = React.memo((props) => {
     return (
         <ReactPaginate
             initialPage={props.initialPage}
@@ -43,6 +43,6 @@ const Pagination: React.FC<PagiantionPropsType> = (props) => {
                 </>
             } />
     );
-}
+});
 
 export default Pagination;

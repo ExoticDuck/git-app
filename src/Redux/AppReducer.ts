@@ -21,6 +21,7 @@ export const AppReducer = (state: ConditionalStateType = initialState, action: G
             return {...state, startCondition: false, isUserFound: action.payload.isFound}
         } 
         case UPDATE_IS_FETCHING: {
+            debugger
             return {...state, isReposFetching: action.payload.isFetching}
         }
         default: return state;

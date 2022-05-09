@@ -15,11 +15,12 @@ type RepositoriesDisplayPropsType = {
 }
 
 let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((props) => {
-    let mappedRepos = props.repositories.map(repo => <RepositoryCard name={repo.name} description={repo.description} html_Url={repo.html_url} />);
+    let mappedRepos = props.repositories.map((repo, i) => <RepositoryCard key={i} name={repo.name} description={repo.description} html_Url={repo.html_url} />);
     let pagesCount = Math.ceil(props.repositoriesCount / 4);
 
     function onPageChangeHandler({ selected }: Selected) {
         props.getRepositories(props.username, ++selected);
+        debugger
     }
 
    

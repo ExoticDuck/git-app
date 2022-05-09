@@ -1,5 +1,6 @@
 import { Dispatch } from "redux";
 import { RepositoriesAPI } from "../API/api";
+import { setReposIsFetching } from "./AppReducer";
 
 const UPDATE_REPOS_LIST = "UPDATE-REPOS-LIST";
 const UPDATE_REPOS_COUNT = "UPDATE-REPOS-COUNT";
@@ -168,12 +169,15 @@ export const updateIsFetching = (isFetching: boolean) => {
 
 export const getRepositories = (username: string, currentPage: number) => {
     return async (dispatch: Dispatch) => {
-        
+        debugger
+        dispatch(setReposIsFetching(true));
         let result = await RepositoriesAPI.getRepositories(username, currentPage);
-    
+        dispatch(updateReposList(result.data));
         let countResult = await RepositoriesAPI.getRepositoriesCount(username);
         dispatch(updateReposCount(countResult.data.length));
-        dispatch(updateReposList(result.data));
+        dispatch(setReposIsFetching(false));
+        
+        
         
     }
 }
