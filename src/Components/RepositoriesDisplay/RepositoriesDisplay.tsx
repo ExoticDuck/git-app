@@ -20,8 +20,19 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
 
     function onPageChangeHandler({ selected }: Selected) {
         props.getRepositories(props.username, ++selected);
+        setCurrentPage(selected);
     }
 
+    function getItems(page: number) {
+        let lastItem = page * 4;
+        let firstItem = lastItem - 3;
+        if(lastItem > props.repositoriesCount) {
+            lastItem = props.repositoriesCount;
+        }
+        return `${firstItem} - ${lastItem}`;
+    }
+
+    const [currentPage, setCurrentPage] = useState<number>(1)
 
 
     if (!props.repositories.length) {
@@ -51,7 +62,12 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
             <div className={style.Repositories}>
                 {mappedRepos}
             </div>
-            <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
+            <div>
+                <div>
+                    {getItems(currentPage)} of {props.repositoriesCount} items
+                </div>
+                <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
+            </div>
         </div>
     );
 
