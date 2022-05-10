@@ -1,6 +1,7 @@
+import { AxiosError } from "axios";
 import { Dispatch } from "redux";
 import { RepositoriesAPI } from "../API/api";
-import { setReposIsFetching } from "./AppReducer";
+
 
 const UPDATE_REPOS_LIST = "UPDATE-REPOS-LIST";
 const UPDATE_REPOS_COUNT = "UPDATE-REPOS-COUNT";
@@ -8,7 +9,7 @@ const UPDATE_IS_FETCHING = "UPDATE-IS-FETCHING";
 
 type RepositoriesStateType = {
     repositoriesCount: number,
-    //isFetching: boolean,
+    isFetching: boolean,
     repositoriesList: RepositoryType[]
 };
 
@@ -119,7 +120,7 @@ export type RepositoryType = {
 
 let initialState:RepositoriesStateType = {
     repositoriesCount: 0,
-    //isFetching: false, 
+    isFetching: false, 
     repositoriesList: []
 }
 
@@ -131,9 +132,9 @@ export const RepositoriesReducer = (state: RepositoriesStateType = initialState,
         case UPDATE_REPOS_COUNT: {
             return {...state, repositoriesCount: action.payload.count}
         }
-        // case UPDATE_IS_FETCHING: {
-        //     return {...state, isFetching: action.payload.isFetching}
-        // }
+        case UPDATE_IS_FETCHING: {
+            return {...state, isFetching: action.payload.isFetching}
+        }
         default:
             return state;
     }
@@ -170,14 +171,16 @@ export const updateIsFetching = (isFetching: boolean) => {
 export const getRepositories = (username: string, currentPage: number) => {
     return async (dispatch: Dispatch) => {
         debugger
-        dispatch(setReposIsFetching(true));
+        try{
+        dispatch(updateIsFetching(true));
         let result = await RepositoriesAPI.getRepositories(username, currentPage);
         dispatch(updateReposList(result.data));
-        let countResult = await RepositoriesAPI.getRepositoriesCount(username);
-        dispatch(updateReposCount(countResult.data.length));
-        dispatch(setReposIsFetching(false));
-        
-        
-        
+        dispatch(updateIsFetching(false));
+        } catch (error: any) {
+            if((error as AxiosError)?.response?.status === 404) {
+                dispatch(updateReposList([]));
+            }
+            dispatch(updateIsFetching(false));
+        }
     }
 }

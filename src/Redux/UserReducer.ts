@@ -1,6 +1,8 @@
+import { AxiosError, AxiosResponse } from "axios";
 import { Dispatch } from "redux";
 import { UserAPI } from "../API/api";
-import { setUserFound } from "./AppReducer";
+import { setUserFound, setUserIsFetching } from "./AppReducer";
+import { updateReposCount } from "./RepositoriesReducer";
 
 export type UserType = {
     login: string,
@@ -97,14 +99,19 @@ let UploadUser = (user: UserType) => {
 
 export const getUser = (username: string) => {
     return async (dispatch: Dispatch) => {
-    let result = await UserAPI.getUser(username)
-    .then((result) => {
-        dispatch(setUserFound(true));
-        dispatch(UploadUser(result.data));
-    }).catch((error) => {
-        if(error.response.status === 404) {
-            dispatch(setUserFound(false));
+        try {
+            dispatch(setUserIsFetching(true));
+            let result = await UserAPI.getUser(username);
+            dispatch(setUserFound(true));
+            dispatch(UploadUser(result.data));
+            dispatch(updateReposCount(result.data.public_repos))
+            dispatch(setUserIsFetching(false));
+        } catch (error) {
+            if ((error as AxiosError)?.response?.status === 404) {
+                dispatch(setUserFound(false));
+                dispatch(setUserIsFetching(false));
+            }
         }
-    })
-}}
+    }
+}
 

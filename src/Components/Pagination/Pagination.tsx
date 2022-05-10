@@ -14,7 +14,7 @@ type PagiantionPropsType = {
     onChange: (value: Selected) => void
 }
 
-const Pagination: React.FC<PagiantionPropsType> = React.memo((props) => {
+const Pagination: React.FC<PagiantionPropsType> = (props) => {
     return (
         <ReactPaginate
             initialPage={props.initialPage}
@@ -32,6 +32,7 @@ const Pagination: React.FC<PagiantionPropsType> = React.memo((props) => {
             breakClassName={style.PaginationBreak}
             nextClassName={style.PaginationNextItem}
             previousClassName={style.PaginationPreviousItem}
+            renderOnZeroPageCount={() => null}
             previousLabel={
                 <>
                     <i className="fa-solid fa-chevron-left"></i>
@@ -43,6 +44,6 @@ const Pagination: React.FC<PagiantionPropsType> = React.memo((props) => {
                 </>
             } />
     );
-});
+}
 
 export default Pagination;

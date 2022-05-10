@@ -20,10 +20,9 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
 
     function onPageChangeHandler({ selected }: Selected) {
         props.getRepositories(props.username, ++selected);
-        debugger
     }
 
-   
+
 
     if (!props.repositories.length) {
         return (
@@ -37,16 +36,15 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
             </div>
         );
     }
-    if(props.isFetching) {
-        return(
-            <div className={style.BannerDisplayBlock}>
-                Loading 
-            </div>
-        );
-    }
 
     return (
         <div className={style.RepositoriesDisplayBlock}>
+            {props.isFetching &&
+                <div className={style.BannerDisplayBlock}>
+                    <div className={style.Spinner}>
+                        <i className="fa-solid fa-spinner"></i>
+                    </div>
+                </div>}
             <div className={style.RepositoriesHeader}>
                 {`Repositories (${props.repositoriesCount})`}
             </div>
@@ -57,7 +55,7 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
         </div>
     );
 
-    
+
 });
 
 let mapDispatchToProps = (state: AppStateType) => {
@@ -65,7 +63,7 @@ let mapDispatchToProps = (state: AppStateType) => {
         repositories: state.repositories.repositoriesList,
         repositoriesCount: state.repositories.repositoriesCount,
         username: state.user.login,
-        isFetching: state.appCondition.isReposFetching
+        isFetching: state.repositories.isFetching
     }
 }
 

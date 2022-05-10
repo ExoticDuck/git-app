@@ -9,10 +9,11 @@ import Banner from "../Banner/Banner";
 type ContentContainerPropsType = {
     startCondition: boolean
     isUserFound: boolean
+    isUserFetching: boolean
 }
 
 let ContentContainer: React.FC<ContentContainerPropsType> = (props) => {
-    if(props.isUserFound && !props.startCondition) {
+    if(props.isUserFound && !props.startCondition && !props.isUserFetching) {
         return(
             <div className={style.ContentContainer}>
                 <PersonInfo/>
@@ -21,20 +22,22 @@ let ContentContainer: React.FC<ContentContainerPropsType> = (props) => {
         );
     }
     return(
-        <Banner startCondition={props.startCondition} isUserFound={props.isUserFound}/>
+        <Banner startCondition={props.startCondition} isUserFound={props.isUserFound} isUserFetching={props.isUserFetching}/>
     );
 }
 
-type MapDispatchToPropsType = {
+type MapStateToPropsType = {
     startCondition: boolean
     isUserFound: boolean
+    isUserFetching: boolean
 }
 
-let mapDispatchToProps = (state: AppStateType): MapDispatchToPropsType => {
+let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         startCondition: state.appCondition.startCondition,
-        isUserFound: state.appCondition.isUserFound
+        isUserFound: state.appCondition.isUserFound,
+        isUserFetching: state.appCondition.isUserFetching
     }
 }
 
-export default connect(mapDispatchToProps, {})(ContentContainer);
+export default connect(mapStateToProps, {})(ContentContainer);

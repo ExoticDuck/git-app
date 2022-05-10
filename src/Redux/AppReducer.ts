@@ -1,16 +1,16 @@
 const SET_USER_FOUND = "SET-USER-FOUND";
-const UPDATE_IS_FETCHING = "UPDATE-IS-FETCHING";
+const UPDATE_USER_IS_FETCHING = "UPDATE-USER-IS-FETCHING";
 
 type ConditionalStateType = {
     startCondition: boolean,
     isUserFound: boolean,
-    isReposFetching: boolean
+    isUserFetching: boolean
 }
 
 let initialState: ConditionalStateType = {
     startCondition: true,
     isUserFound: false,
-    isReposFetching: false
+    isUserFetching: false
 }
 
 
@@ -20,15 +20,14 @@ export const AppReducer = (state: ConditionalStateType = initialState, action: G
         case SET_USER_FOUND: {
             return {...state, startCondition: false, isUserFound: action.payload.isFound}
         } 
-        case UPDATE_IS_FETCHING: {
-            debugger
-            return {...state, isReposFetching: action.payload.isFetching}
+        case UPDATE_USER_IS_FETCHING: {
+            return {...state, isUserFetching: action.payload.isFetching}
         }
         default: return state;
     }
 }
 
-type GeneralACType = setUserFoundACType | setReposIsFetchingACType;
+type GeneralACType = setUserFoundACType | setUserIsFetchingACType;
 
 type setUserFoundACType = ReturnType<typeof setUserFound>
 export const setUserFound = (isFound: boolean) => {
@@ -39,10 +38,10 @@ export const setUserFound = (isFound: boolean) => {
         }
     } as const
 }
-type setReposIsFetchingACType = ReturnType<typeof setReposIsFetching>
-export const setReposIsFetching = (isFetching: boolean) => {
+type setUserIsFetchingACType = ReturnType<typeof setUserIsFetching>
+export const setUserIsFetching = (isFetching: boolean) => {
     return {
-        type: UPDATE_IS_FETCHING,
+        type: UPDATE_USER_IS_FETCHING,
         payload: {
             isFetching
         }
