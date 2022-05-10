@@ -62,8 +62,8 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
             <div className={style.Repositories}>
                 {mappedRepos}
             </div>
-            <div>
-                <div>
+            <div className={style.PaginationContainer}>
+                <div className={style.ItemsCount}>
                     {getItems(currentPage)} of {props.repositoriesCount} items
                 </div>
                 <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
