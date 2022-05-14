@@ -7,3 +7,12 @@
     grid-template-areas: "P R";
     /* border: 1px solid blue; */
 }
+
+@media screen and (max-width: 320px) {
+    .ContentContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px auto;
+        grid-template-areas: "P"
+        "R";
+    }
+}

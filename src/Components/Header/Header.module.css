@@ -13,3 +13,9 @@
     font-size: 40px;
     color: #fff;
 }
+
+@media screen and (max-width: 320px) {
+    .Logo {
+        margin-left: 20px;
+    }
+}

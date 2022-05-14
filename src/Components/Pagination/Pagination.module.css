@@ -86,3 +86,17 @@
     margin-left: 16px;
     margin-right: 16px;
 }
+
+@media screen and (max-width: 320px) {
+    .Pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    outline: transparent;
+    float: right;
+    margin-right: 0;
+    padding: 0;
+}
+}

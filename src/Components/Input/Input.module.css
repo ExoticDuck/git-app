@@ -25,3 +25,15 @@
     height: 42px;
     border-radius: 6px 0 0 6px;
 }
+
+
+@media screen and (max-width: 320px) {
+    .Input {
+        height: 40px;
+        width: 190px;
+        margin: 0;
+        border: 0;
+        outline: none;
+        border-radius: 0 6px 6px 0;
+    }
+}

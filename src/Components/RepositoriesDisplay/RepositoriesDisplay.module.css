@@ -98,7 +98,6 @@
     color: #808080;
 }
 
-
 .PaginationContainer {
     position: absolute;
     bottom: 28px;
@@ -107,6 +106,47 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+
     margin-right: 56px;
+}
+
+@media screen and (max-width: 320px) {
+
+    .RepositoriesHeader {
+        /* margin-top: 10px;
+        margin-bottom: 35px; */
+        height: 42px;
+        width: fit-content;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 42px;
+        color: #000000;
+        margin: 20px auto;
+    }
+    .RepositoriesDisplayBlock {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        grid-area: "R";
+    }
+    .Repositories {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .PaginationContainer {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
 }
