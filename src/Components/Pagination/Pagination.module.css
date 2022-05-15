@@ -100,3 +100,29 @@
     padding: 0;
 }
 }
+@media screen and (max-width: 376px) {
+    .Pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    outline: transparent;
+    float: right;
+    margin-right: 0;
+    padding: 0;
+}
+}
+@media screen and (max-width: 426px) {
+    .Pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    outline: transparent;
+    float: right;
+    margin-right: 0;
+    padding: 0;
+}
+}

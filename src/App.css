@@ -20,3 +20,14 @@
     "C";
   }
 }
+
+@media screen and (max-width: 375px) {
+  .App {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 72px calc(100vh - 72px);
+    grid-template-areas: "H"
+    "C";
+  }
+}

@@ -35,7 +35,7 @@
     color: #000000;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 321px) {
     .RepositoryCard {
         box-sizing: border-box;
         width: 300px;
@@ -54,9 +54,87 @@
         width: fit-content;
         height: 80px;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 22px;
         margin: 8px 0;
         color: #000000;
+    }
+
+    .Name {
+        width: 100%;
+        height: fit-content;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #0064eb;
+    }
+}
+@media screen and (max-width: 376px) {
+    .RepositoryCard {
+        box-sizing: border-box;
+        width: 330px;
+        height: 112px;
+        border-radius: 6px;
+        padding: 10px 16px 10px 16px;
+        background-color: #fff;
+        font-family: "Inter";
+        font-style: normal;
+        margin-bottom: 24px;
+        overflow: hidden;
+        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
+    }
+
+    .Description {
+        width: fit-content;
+        height: 80px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        margin: 8px 0;
+        color: #000000;
+    }
+
+    .Name {
+        width: 100%;
+        height: fit-content;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #0064eb;
+    }
+}
+@media screen and (min-width: 425px) {
+    .RepositoryCard {
+        box-sizing: border-box;
+        /* sss */
+        width: 410px; 
+        height: 112px;
+        border-radius: 6px;
+        padding: 10px 16px 10px 16px;
+        background-color: #fff;
+        font-family: "Inter";
+        font-style: normal;
+        margin-bottom: 24px;
+        overflow: hidden;
+        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
+    }
+
+    .Description {
+        width: fit-content;
+        height: 80px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        margin: 8px 0;
+        color: #000000;
+    }
+
+    .Name {
+        width: 100%;
+        height: fit-content;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        color: #0064eb;
     }
 }

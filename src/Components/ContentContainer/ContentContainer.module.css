@@ -16,3 +16,19 @@
         "R";
     }
 }
+@media screen and (max-width: 376px) {
+    .ContentContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px auto;
+        grid-template-areas: "P"
+        "R";
+    }
+}
+@media screen and (max-width: 426px) {
+    .ContentContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 500px auto;
+        grid-template-areas: "P"
+        "R";
+    }
+}

@@ -37,3 +37,23 @@
         border-radius: 0 6px 6px 0;
     }
 }
+@media screen and (max-width: 375px) {
+    .Input {
+        height: 40px;
+        width: 200px;
+        margin: 0;
+        border: 0;
+        outline: none;
+        border-radius: 0 6px 6px 0;
+    }
+}
+@media screen and (max-width: 425px) {
+    .Input {
+        height: 40px;
+        width: 250px;
+        margin: 0;
+        border: 0;
+        outline: none;
+        border-radius: 0 6px 6px 0;
+    }
+}
