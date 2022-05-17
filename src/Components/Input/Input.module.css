@@ -27,7 +27,7 @@
 }
 
 
-@media screen and (max-width: 320px) {
+@media (max-width: 320px) {
     .Input {
         height: 40px;
         width: 190px;
@@ -37,7 +37,7 @@
         border-radius: 0 6px 6px 0;
     }
 }
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 321px) and (max-width: 376px) {
     .Input {
         height: 40px;
         width: 200px;
@@ -47,10 +47,20 @@
         border-radius: 0 6px 6px 0;
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 376px) and (max-width: 426px) {
     .Input {
         height: 40px;
         width: 250px;
+        margin: 0;
+        border: 0;
+        outline: none;
+        border-radius: 0 6px 6px 0;
+    }
+}
+@media screen and (min-width: 426px) and (max-width: 650px) {
+    .Input {
+        height: 40px;
+        width: 300px;
         margin: 0;
         border: 0;
         outline: none;

@@ -162,7 +162,7 @@
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (min-width: 321px) and (max-width: 376px) {
 
     .RepositoriesHeader {
         height: 42px;
@@ -213,7 +213,109 @@
         margin-top: 20px;
     }
 }
-@media screen and (max-width: 426px) {
+@media screen and (min-width: 376px) and (max-width: 426px) {
+
+    .RepositoriesHeader {
+        height: 42px;
+        width: fit-content;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 42px;
+        color: #000000;
+        margin: 20px auto;
+    }
+    .RepositoriesDisplayBlock {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        grid-area: "R";
+    }
+    .BannerDisplayBlock {
+        position: absolute;
+        top: 0;
+        background-color: #f9f9f9;
+        height: 610px;
+        width: 100%;
+        z-index: 2;
+        grid-area: "R";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 1px solid red; */
+    }
+    .Repositories {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .PaginationContainer {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+@media screen and (min-width: 426px) and (max-width: 769px) {
+
+    .RepositoriesHeader {
+        height: 42px;
+        width: fit-content;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 42px;
+        color: #000000;
+        margin: 20px auto;
+    }
+    .RepositoriesDisplayBlock {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        grid-area: "R";
+    }
+    .BannerDisplayBlock {
+        position: absolute;
+        top: 0;
+        background-color: #f9f9f9;
+        height: 610px;
+        width: 100%;
+        z-index: 2;
+        grid-area: "R";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 1px solid red; */
+    }
+    .Repositories {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .PaginationContainer {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+@media screen and (min-width: 770px) and (max-width: 1025px) {
 
     .RepositoriesHeader {
         height: 42px;
