@@ -39,7 +39,7 @@ let Input: React.FC<InputPropsType> = (props) => {
 
     return(
         <div className={style.InputContainer}>
-            <button className={style.Button} onClick={onClickHandler}><i className="fa-solid fa-magnifying-glass"></i></button><input
+            <div className={style.Button} onClick={onClickHandler}><i className="fa-solid fa-magnifying-glass"></i></div><input
             onKeyPress={onKeyPressHandler}
             onChange={onChangeHandler}
             value={value} 
