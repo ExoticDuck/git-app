@@ -1,4 +1,4 @@
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosError } from "axios";
 import { Dispatch } from "redux";
 import { UserAPI } from "../API/api";
 import { setUserFound, setUserIsFetching } from "./AppReducer";
