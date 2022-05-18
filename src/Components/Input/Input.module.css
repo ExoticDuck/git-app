@@ -7,7 +7,8 @@
 
 .Input {
     height: 40px;
-    width: 500px;
+    width: 470px;
+    padding: 0;
     margin: 0;
     border: none;
     outline: none;
@@ -23,7 +24,7 @@
     margin-left: 22px;
     border: 0;
     background-color: #fff;
-    height: 42px;
+    height: 40px;
     border-radius: 6px 0 0 6px;
     display: flex;
     align-items: center;
