@@ -27,7 +27,7 @@
 }
 
 
-@media (max-width: 320px) {
+@media screen and (max-width: 340px) {
     .Input {
         height: 40px;
         width: 190px;
@@ -37,7 +37,7 @@
         border-radius: 0 6px 6px 0;
     }
 }
-@media screen and (min-width: 321px) and (max-width: 376px) {
+@media screen and (min-width: 341px) and (max-width: 396px) {
     .Input {
         height: 40px;
         width: 200px;
@@ -47,7 +47,7 @@
         border-radius: 0 6px 6px 0;
     }
 }
-@media screen and (min-width: 376px) and (max-width: 426px) {
+@media screen and (min-width: 396px) and (max-width: 436px) {
     .Input {
         height: 40px;
         width: 250px;
@@ -57,7 +57,7 @@
         border-radius: 0 6px 6px 0;
     }
 }
-@media screen and (min-width: 426px) and (max-width: 650px) {
+@media screen and (min-width: 436px) and (max-width: 650px) {
     .Input {
         height: 40px;
         width: 300px;

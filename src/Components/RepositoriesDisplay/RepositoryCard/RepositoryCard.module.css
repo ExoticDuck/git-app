@@ -35,7 +35,7 @@
     color: #000000;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 341px) {
     .RepositoryCard {
         box-sizing: border-box;
         width: 300px;
@@ -69,7 +69,7 @@
         color: #0064eb;
     }
 }
-@media screen and (min-width: 321px) and (max-width: 376px) {
+@media screen and (min-width: 341px) and (max-width: 376px) {
     .RepositoryCard {
         box-sizing: border-box;
         width: 330px;
@@ -206,6 +206,39 @@
     }
 }
 @media screen and (min-width: 770px) and (max-width: 1025px) {
+    .RepositoryCard {
+        box-sizing: border-box;
+        /* sss */
+        width: 650px; 
+        height: 112px;
+    border-radius: 6px;
+    padding: 24px 32px 24px 32px;
+    background-color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    margin-bottom: 24px;
+    }
+
+    .Description {
+        width: fit-content;
+        height: 80px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        margin: 8px 0;
+        color: #000000;
+    }
+
+    .Name {
+        width: 100%;
+        height: fit-content;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        color: #0064eb;
+    }
+}
+@media screen and (min-width: 1026px) and (max-width: 1370px) {
     .RepositoryCard {
         box-sizing: border-box;
         /* sss */

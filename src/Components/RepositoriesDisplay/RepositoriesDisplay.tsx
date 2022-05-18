@@ -37,7 +37,7 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
 
     if (!props.repositories.length) {
         return (
-            <div className={style.BannerDisplayBlock}>
+            <div className={style.EmptyDisplayBlock}>
                 <div className={style.Banner}>
                     <div className={style.Icon}>
                         <i className="fa-solid fa-xmark"></i>
@@ -66,7 +66,7 @@ let RepositoriesDisplay: React.FC<RepositoriesDisplayPropsType> = React.memo((pr
                 <div className={style.ItemsCount}>
                     {getItems(currentPage)} of {props.repositoriesCount} items
                 </div>
-                <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={2} pageRangeDisplayed={1} />
+                <Pagination initialPage={0} pageCount={pagesCount} onChange={onPageChangeHandler} marginPagesDisplayed={1} pageRangeDisplayed={3} />
             </div>
         </div>
     );

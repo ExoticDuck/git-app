@@ -14,7 +14,7 @@
     color: #fff;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 340px) {
     .Logo {
         margin-left: 20px;
     }
