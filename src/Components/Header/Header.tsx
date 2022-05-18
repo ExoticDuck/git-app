@@ -14,7 +14,6 @@ type HeaderPropsType = {
 let Header: React.FC<HeaderPropsType> = (props) => {
 
     function onSubmitHandler(username: string) {
-        debugger
         props.getUser(username);
         props.getRepositories(username, 1);
     }
@@ -28,9 +27,12 @@ let Header: React.FC<HeaderPropsType> = (props) => {
         </div>
     );
 }
+
+
 let mapDispatchToProps = (state: AppStateType) => {
-    return {}
+    return {};
 }
+
 let HeaderContainer = connect(mapDispatchToProps, {getUser, getRepositories})(Header);
 
 export default HeaderContainer;

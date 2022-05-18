@@ -14,14 +14,14 @@ type PagiantionPropsType = {
     onChange: (value: Selected) => void
 }
 
-const Pagination: React.FC<PagiantionPropsType> = (props) => {
+const Pagination: React.FC<PagiantionPropsType> = ({initialPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange}) => {
     return (
         <ReactPaginate
-            initialPage={props.initialPage}
-            marginPagesDisplayed={props.marginPagesDisplayed}
-            pageCount={props.pageCount}
-            pageRangeDisplayed={props.pageRangeDisplayed}
-            onPageChange={props.onChange}
+            initialPage={initialPage}
+            marginPagesDisplayed={marginPagesDisplayed}
+            pageCount={pageCount}
+            pageRangeDisplayed={pageRangeDisplayed}
+            onPageChange={onChange}
             containerClassName={style.Pagination}
             activeClassName={style.PaginationActive}
             pageLinkClassName={style.PaginationPageLink}

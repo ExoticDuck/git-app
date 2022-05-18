@@ -12,8 +12,8 @@ type ContentContainerPropsType = {
     isUserFetching: boolean
 }
 
-let ContentContainer: React.FC<ContentContainerPropsType> = (props) => {
-    if(props.isUserFound && !props.startCondition && !props.isUserFetching) {
+let ContentContainer: React.FC<ContentContainerPropsType> = ({startCondition, isUserFetching, isUserFound}) => {
+    if(isUserFound && !startCondition && !isUserFetching) {
         return(
             <div className={style.ContentContainer}>
                 <PersonInfo/>
@@ -22,7 +22,7 @@ let ContentContainer: React.FC<ContentContainerPropsType> = (props) => {
         );
     }
     return(
-        <Banner startCondition={props.startCondition} isUserFound={props.isUserFound} isUserFetching={props.isUserFetching}/>
+        <Banner startCondition={startCondition} isUserFound={isUserFound} isUserFetching={isUserFetching}/>
     );
 }
 
@@ -40,4 +40,6 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     }
 }
 
-export default connect(mapStateToProps, {})(ContentContainer);
+let ConnectedContent = connect(mapStateToProps, {})(ContentContainer);
+
+export default ConnectedContent;

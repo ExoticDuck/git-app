@@ -9,15 +9,15 @@ const instance = axios.create({
 
 export const UserAPI = {
     getUser(username: string) {
-        return instance.get(`https://api.github.com/users/${username}`);
+        return instance.get(`users/${username}`);
     }
 }
 
 export const RepositoriesAPI = {
     getRepositories(username: string, currentPage: number = 1) {
-        return instance.get(`https://api.github.com/users/${username}/repos?per_page=4&page=${currentPage}`);
+        return instance.get(`users/${username}/repos?per_page=4&page=${currentPage}`);
     },
     getRepositoriesCount(username: string) {
-        return instance.get(`https://api.github.com/users/${username}/repos`);
+        return instance.get(`users/${username}/repos`);
     }
 }

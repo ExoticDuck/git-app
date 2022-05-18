@@ -139,7 +139,9 @@ export const RepositoriesReducer = (state: RepositoriesStateType = initialState,
             return state;
     }
 }
+
 type GeneralACType = UpdateReposListACType | UpdateReposCountACType | UpdateIsFetchingACType;
+
 type UpdateReposListACType = ReturnType<typeof updateReposList>
 export const updateReposList = (list: RepositoryType[]) => {
     return {
@@ -149,6 +151,7 @@ export const updateReposList = (list: RepositoryType[]) => {
         }
     } as const
 }
+
 type UpdateReposCountACType = ReturnType<typeof updateReposCount>
 export const updateReposCount = (count: number) => {
     return {
@@ -158,6 +161,7 @@ export const updateReposCount = (count: number) => {
         }
     } as const
 }
+
 type UpdateIsFetchingACType = ReturnType<typeof updateIsFetching>
 export const updateIsFetching = (isFetching: boolean) => {
     return {
@@ -170,7 +174,6 @@ export const updateIsFetching = (isFetching: boolean) => {
 
 export const getRepositories = (username: string, currentPage: number) => {
     return async (dispatch: Dispatch) => {
-        debugger
         try{
         dispatch(updateIsFetching(true));
         let result = await RepositoriesAPI.getRepositories(username, currentPage);

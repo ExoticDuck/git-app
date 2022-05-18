@@ -7,14 +7,14 @@ type RepositoryCardPropsType = {
     html_Url: string
 }
 
-let RepositoryCard: React.FC<RepositoryCardPropsType> = (props) => {
+let RepositoryCard: React.FC<RepositoryCardPropsType> = ({name, description, html_Url}) => {
     return(
         <div className={style.RepositoryCard}>
             <div className={style.Name}>
-                <a href={props.html_Url} target={"_blank"} rel="noreferrer">{props.name}</a>
+                <a href={html_Url} target={"_blank"} rel="noreferrer">{name}</a>
             </div>
             <div className={style.Description}>
-                {props.description}
+                {description}
             </div>
         </div>
     );

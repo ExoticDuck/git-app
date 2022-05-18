@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .RepositoriesDisplayBlock {
-    /* border: 1px solid red; */
     position: relative;
     height: 100%;
     width: 100%;
@@ -34,7 +33,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
 }
 
 .EmptyDisplayBlock {
@@ -77,10 +75,6 @@
     font-size: 50px;
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     animation: rotate 1.5s infinite linear;
 }
 
@@ -96,7 +90,6 @@
 .ItemsCount {
     width: fit-content;
     height: 21px;
-
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
@@ -104,7 +97,6 @@
     line-height: 21px;
     display: flex;
     align-items: center;
-
     color: #808080;
 }
 
@@ -116,268 +108,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     margin-right: 56px;
 }
 
-@media screen and (max-width: 320px) {
-
-    .RepositoriesHeader {
-        height: 42px;
-        width: fit-content;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 42px;
-        color: #000000;
-        margin: 20px auto;
-    }
-    .RepositoriesDisplayBlock {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        grid-area: "R";
-    }
-    .BannerDisplayBlock {
-        position: absolute;
-        top: 0;
-        background-color: #f9f9f9;
-        height: 610px;
-        width: 320px;
-        z-index: 2;
-        grid-area: "R";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 1px solid red; */
-    }
-    .Repositories {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    .PaginationContainer {
-        position: relative;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-
-@media screen and (min-width: 321px) and (max-width: 376px) {
-
-    .RepositoriesHeader {
-        height: 42px;
-        width: fit-content;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 42px;
-        color: #000000;
-        margin: 20px auto;
-    }
-    .RepositoriesDisplayBlock {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        grid-area: "R";
-    }
-    .BannerDisplayBlock {
-        position: absolute;
-        top: 0;
-        background-color: #f9f9f9;
-        height: 610px;
-        width: 100%;
-        z-index: 2;
-        grid-area: "R";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 1px solid red; */
-    }
-    .Repositories {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    .PaginationContainer {
-        position: relative;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-@media screen and (min-width: 376px) and (max-width: 426px) {
-
-    .RepositoriesHeader {
-        height: 42px;
-        width: fit-content;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 42px;
-        color: #000000;
-        margin: 20px auto;
-    }
-    .RepositoriesDisplayBlock {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        grid-area: "R";
-    }
-    .BannerDisplayBlock {
-        position: absolute;
-        top: 0;
-        background-color: #f9f9f9;
-        height: 610px;
-        width: 100%;
-        z-index: 2;
-        grid-area: "R";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 1px solid red; */
-    }
-    .Repositories {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    .PaginationContainer {
-        position: relative;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-@media screen and (min-width: 426px) and (max-width: 769px) {
-
-    .RepositoriesHeader {
-        height: 42px;
-        width: fit-content;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 42px;
-        color: #000000;
-        margin: 20px auto;
-    }
-    .RepositoriesDisplayBlock {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        grid-area: "R";
-    }
-    .BannerDisplayBlock {
-        position: absolute;
-        top: 0;
-        background-color: #f9f9f9;
-        height: 610px;
-        width: 100%;
-        z-index: 2;
-        grid-area: "R";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 1px solid red; */
-    }
-    .Repositories {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    .PaginationContainer {
-        position: relative;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-@media screen and (min-width: 770px) and (max-width: 1025px) {
-
-    .RepositoriesHeader {
-        height: 42px;
-        width: fit-content;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 42px;
-        color: #000000;
-        margin: 20px auto;
-    }
-    .RepositoriesDisplayBlock {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        grid-area: "R";
-    }
-    .BannerDisplayBlock {
-        position: absolute;
-        top: 0;
-        background-color: #f9f9f9;
-        height: 610px;
-        width: 100%;
-        z-index: 2;
-        grid-area: "R";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 1px solid red; */
-    }
-    .Repositories {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-
-    .PaginationContainer {
-        position: relative;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
 @media screen and (min-width: 1026px) and (max-width: 1370px) {
-
     .RepositoriesHeader {
         height: 42px;
         width: fit-content;
@@ -387,7 +121,6 @@
         font-size: 32px;
         line-height: 42px;
         color: #000000;
-        
     }
     .RepositoriesDisplayBlock {
         position: relative;
@@ -406,7 +139,6 @@
         display: flex;
         align-items: left;
         justify-content: center;
-        /* border: 1px solid red; */
     }
     .Repositories {
         width: 100%;
@@ -415,12 +147,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: left;
-        
     }
 
     .PaginationContainer {
         position: relative;
-        
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -430,6 +160,24 @@
 }
 
 @media screen and (max-width: 1025px) {
+    .RepositoriesDisplayBlock {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        grid-area: "R";
+    }
+    .BannerDisplayBlock {
+        position: absolute;
+        top: 0;
+        background-color: #f9f9f9;
+        height: 610px;
+        width: 100%;
+        z-index: 2;
+        grid-area: "R";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .EmptyDisplayBlock {
         height: 250px;
         position: relative;
@@ -438,5 +186,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .RepositoriesHeader {
+        height: 42px;
+        width: fit-content;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 42px;
+        color: #000000;
+        margin: 20px auto;
+    }
+    .PaginationContainer {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .Repositories {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

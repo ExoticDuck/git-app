@@ -38,6 +38,7 @@ export const setUserFound = (isFound: boolean) => {
         }
     } as const
 }
+
 type setUserIsFetchingACType = ReturnType<typeof setUserIsFetching>
 export const setUserIsFetching = (isFetching: boolean) => {
     return {

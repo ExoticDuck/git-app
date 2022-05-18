@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, KeyboardEventHandler, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import style from "./Input.module.css";
 
 type InputPropsType = {

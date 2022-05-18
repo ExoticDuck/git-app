@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { AppStateType } from "../../Redux/store";
-import { getUser } from "../../Redux/UserReducer";
 import style from "./PersonInfo.module.css"
 
 type PersonInfoPropsType = {
@@ -13,29 +12,29 @@ type PersonInfoPropsType = {
     following: number
 }
 
-let PersonInfo: React.FC<PersonInfoPropsType> = (props) => {
+let PersonInfo: React.FC<PersonInfoPropsType> = React.memo(({avatarUrl, htmlUrl, name, username, followers, following}) => {
     return (
         <div className={style.PersonInfoBlock}>
             <div className={style.AvatarBlock}>
-                <img src={props.avatarUrl} alt="avatar" className={style.Avatar} />
+                <img src={avatarUrl} alt="avatar" className={style.Avatar} />
             </div>
             <div className={style.PersonInfo}>
-                <div className={style.Name}>{props.name}</div>
-                <div className={style.Username}><a href={props.htmlUrl} target="_blank" rel="noreferrer">{props.username}</a></div>
+                <div className={style.Name}>{name}</div>
+                <div className={style.Username}><a href={htmlUrl} target="_blank" rel="noreferrer">{username}</a></div>
             </div>
             <div className={style.FollowBar}>
                 <div className={style.Followers}>
                     <i className="fa-solid fa-user-group"></i>
-                    {props.followers} followers
+                    {followers} followers
                 </div>
                 <div className={style.Following}>
                     <i className="fa-solid fa-user"></i>
-                    {props.following} following
+                    {following} following
                 </div>
             </div>
         </div>
     );
-}
+});
 
 type mapStateToPropsType = {
     avatarUrl: string,

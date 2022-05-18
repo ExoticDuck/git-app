@@ -1,7 +1,5 @@
 import React from "react";
 import style from "./Banner.module.css";
-import { connect } from 'react-redux';
-import { AppStateType } from "../../Redux/store";
 
 type BannerPropsType = {
     startCondition: boolean

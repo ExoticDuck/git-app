@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 .RepositoryCard {
     box-sizing: border-box;
@@ -37,221 +37,54 @@
 
 @media screen and (max-width: 341px) {
     .RepositoryCard {
-        box-sizing: border-box;
         width: 300px;
-        height: 112px;
-        border-radius: 6px;
         padding: 10px 16px 10px 16px;
-        background-color: #fff;
-        font-family: "Inter";
-        font-style: normal;
-        margin-bottom: 24px;
         overflow: hidden;
-        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
     }
-
     .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
         font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
         height: fit-content;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 20px;
-        color: #0064eb;
+        line-height: 19px;
     }
 }
+
 @media screen and (min-width: 341px) and (max-width: 376px) {
     .RepositoryCard {
-        box-sizing: border-box;
         width: 330px;
-        height: 112px;
-        border-radius: 6px;
         padding: 10px 16px 10px 16px;
-        background-color: #fff;
-        font-family: "Inter";
-        font-style: normal;
-        margin-bottom: 24px;
         overflow: hidden;
-        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
-    }
-
-    .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
-        height: fit-content;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 20px;
-        color: #0064eb;
     }
 }
+
 @media screen and (min-width: 376px) and (max-width: 426px) {
     .RepositoryCard {
-        box-sizing: border-box;
         width: 330px;
-        height: 112px;
-        border-radius: 6px;
         padding: 10px 16px 10px 16px;
-        background-color: #fff;
-        font-family: "Inter";
-        font-style: normal;
-        margin-bottom: 24px;
         overflow: hidden;
-        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
-    }
-
-    .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
-        height: fit-content;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 20px;
-        color: #0064eb;
     }
 }
+
 @media screen and (min-width: 425px) and (max-width: 560px) {
     .RepositoryCard {
-        box-sizing: border-box;
-        /* sss */
-        width: 410px; 
-        height: 112px;
-        border-radius: 6px;
+        width: 410px;
         padding: 10px 16px 10px 16px;
-        background-color: #fff;
-        font-family: "Inter";
-        font-style: normal;
-        margin-bottom: 24px;
         overflow: hidden;
-        box-shadow: 0px -19px 7px -3px rgba(255, 255, 255, 1) inset;
-    }
-
-    .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
-        height: fit-content;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 20px;
-        color: #0064eb;
     }
 }
+
 @media screen and (min-width: 561px) and (max-width: 769px) {
     .RepositoryCard {
-        box-sizing: border-box;
-        /* sss */
-        width: 500px; 
-        height: 112px;
-    border-radius: 6px;
-    padding: 24px 32px 24px 32px;
-    background-color: #fff;
-    font-family: "Inter";
-    font-style: normal;
-    margin-bottom: 24px;
-    }
-
-    .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
-        height: fit-content;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 20px;
-        color: #0064eb;
+        width: 500px;
     }
 }
-@media screen and (min-width: 770px) and (max-width: 1025px) {
+
+@media screen and (min-width: 770px) and (max-width: 1350px) {
     .RepositoryCard {
-        box-sizing: border-box;
-        /* sss */
-        width: 650px; 
-        height: 112px;
-    border-radius: 6px;
-    padding: 24px 32px 24px 32px;
-    background-color: #fff;
-    font-family: "Inter";
-    font-style: normal;
-    margin-bottom: 24px;
-    }
-
-    .Description {
-        width: fit-content;
-        height: 80px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-        margin: 8px 0;
-        color: #000000;
-    }
-
-    .Name {
-        width: 100%;
-        height: fit-content;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 20px;
-        color: #0064eb;
+        width: 650px;
     }
 }
-@media screen and (min-width: 1026px) and (max-width: 1370px) {
-    .RepositoryCard {
-        box-sizing: border-box;
-        /* sss */
-        width: 650px; 
-        height: 112px;
-    border-radius: 6px;
-    padding: 24px 32px 24px 32px;
-    background-color: #fff;
-    font-family: "Inter";
-    font-style: normal;
-    margin-bottom: 24px;
-    }
 
+@media screen and (min-width: 341px) and (max-width: 1025px) {
     .Description {
         width: fit-content;
         height: 80px;

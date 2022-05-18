@@ -4,6 +4,8 @@ import { UserAPI } from "../API/api";
 import { setUserFound, setUserIsFetching } from "./AppReducer";
 import { updateReposCount } from "./RepositoriesReducer";
 
+const UPLOAD_USER = "UPLOAD-USER";
+
 export type UserType = {
     login: string,
     id: number | null,
@@ -73,8 +75,6 @@ let initialState = {
     created_at: "",
     updated_at: ""
 }
-
-const UPLOAD_USER = "UPLOAD-USER";
 
 export const UserReducer = (state: UserType = initialState, action: GeneralACType) => {
     switch (action.type) {

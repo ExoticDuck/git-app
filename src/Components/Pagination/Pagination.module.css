@@ -31,11 +31,6 @@
     margin-left: 16px;
 }
 
-.PaginationBreakLink {
-
-    
-}
-
 .PaginationPreviousItem {
     margin-left: 16px;
 }
@@ -87,7 +82,7 @@
     margin-right: 16px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1025px) {
     .Pagination {
     display: flex;
     flex-direction: row;
@@ -99,30 +94,4 @@
     margin-right: 0;
     padding: 0;
 }
-}
-@media screen and (max-width: 376px) {
-    .Pagination {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    outline: transparent;
-    float: right;
-    margin-right: 0;
-    padding: 0;
-}
-}
-@media screen and (max-width: 426px) {
-    .Pagination {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    outline: transparent;
-    float: right;
-    margin-right: 0;
-    padding: 0;
-}
-}
+} 
