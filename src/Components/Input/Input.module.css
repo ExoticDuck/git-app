@@ -9,8 +9,9 @@
     height: 40px;
     width: 500px;
     margin: 0;
-    border: 0;
+    border: none;
     outline: none;
+    -webkit-appearance: none;
     border-radius: 0 6px 6px 0;
 }
 
