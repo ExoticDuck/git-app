@@ -13,6 +13,12 @@ type PersonInfoPropsType = {
 }
 
 let PersonInfo: React.FC<PersonInfoPropsType> = React.memo(({avatarUrl, htmlUrl, name, username, followers, following}) => {
+    function followersConvert(followers: number) {
+        if(followers > 1000) {
+            return `${(followers/1000).toFixed(1)}k`;
+        }
+        return followers;
+    }
     return (
         <div className={style.PersonInfoBlock}>
             <div className={style.AvatarBlock}>
@@ -25,7 +31,7 @@ let PersonInfo: React.FC<PersonInfoPropsType> = React.memo(({avatarUrl, htmlUrl,
             <div className={style.FollowBar}>
                 <div className={style.Followers}>
                     <i className="fa-solid fa-user-group"></i>
-                    {followers} followers
+                    {followersConvert(followers)} followers
                 </div>
                 <div className={style.Following}>
                     <i className="fa-solid fa-user"></i>
