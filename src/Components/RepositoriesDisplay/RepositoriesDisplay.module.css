@@ -220,4 +220,7 @@
     .PaginationContainer {
         margin-right: 0px;
     }
+    .EmptyDisplayBlock {
+        min-width: 877px;
+    }
 }
